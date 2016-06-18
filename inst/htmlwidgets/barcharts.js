@@ -23,10 +23,12 @@ HTMLWidgets.widget({
       			  subtext: x.message.title_subtext
       			},
       			tooltip: {
-      			  trigger: 'axis'
+      			  trigger: 'axis',
+      			  show: true,
+      			  formatter: '<strong>{b}</strong> <br/>{a0} : {c0}% <br/> {a1} : {c1}%'
       			},
       			legend: {
-      			  x: 5,
+      			  x: 100,
       			  data: x.message.legend_titles
       			},
       			toolbox: {
@@ -41,10 +43,16 @@ HTMLWidgets.widget({
       			calculable: true,
       			xAxis: [{
       			  type: 'value',
+      			  min:0,
+      			  max:100,
+      			  splitNumber:x.message.split_number,
       			  boundaryGap: [0, 0.01]
       			}],
       			yAxis: [{
       			  type: 'category',
+      			  axisLabel:{
+      			    margin:5
+      			  },
       			  data: x.message.category
       			}],
       			series: [{
