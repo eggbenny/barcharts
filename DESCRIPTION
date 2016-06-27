@@ -1,6 +1,6 @@
 Package: barcharts
 Title: barcharts
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: c(person("Mahmudul", "Hasan", email = "first.last@example.com", role = c("aut", "cre")),
   person("Benedito", "Chou", email = "first.last@example.com", role = c("aut")),
   person("Emelie", "Gustafsson", email = "first.last@example.com", role = c("aut")))

@@ -15,6 +15,15 @@ HTMLWidgets.widget({
         // TODO: code to render the widget, e.g.
         //el.innerText = x.message;
         //console.log(x);
+
+        var dSeries = [], cFormatter = '<strong>{b}</strong>';
+
+        //dynamic series and formatter
+        for(i=0; i<x.message.legend_titles.length; i++){
+          dSeries.push({name: x.message.legend_titles[i], type: 'bar',data: x.message.category_data[i]});
+          cFormatter = cFormatter +  ' <br/>{a' + i + '} : {c' + i + '}%';
+        }
+
         var barchart = echarts.init(el, theme);
 
         barchart.setOption({
@@ -25,7 +34,7 @@ HTMLWidgets.widget({
       			tooltip: {
       			  trigger: 'axis',
       			  show: true,
-      			  formatter: '<strong>{b}</strong> <br/>{a0} : {c0}% <br/> {a1} : {c1}%'
+      			  formatter: cFormatter
       			},
       			legend: {
       			  x: 100,
@@ -55,15 +64,7 @@ HTMLWidgets.widget({
       			  },
       			  data: x.message.category
       			}],
-      			series: [{
-      			  name: x.message.legend_titles[0],
-      			  type: 'bar',
-      			  data: x.message.category_data[0]
-      			}, {
-      			  name: x.message.legend_titles[1],
-      			  type: 'bar',
-      			  data: x.message.category_data[1]
-      			}]
+      			series: dSeries
       		});
 
       },
