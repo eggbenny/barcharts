@@ -1,11 +1,11 @@
 #' Bar Charts.
 #'
-#' Create a bar chart based on ECharts 3.0.
+#' Create a bar chart based on ECharts 2.2.
 #'
 #'
 #' @param message A dataframe.
 #' @param width,height nada.
-#' @return A bar chart based on ECharts 3.0.
+#' @return A bar chart based on ECharts 2.2.
 #'
 #'
 #' @import htmlwidgets
