@@ -24,9 +24,29 @@ HTMLWidgets.widget({
           cFormatter = cFormatter +  ' <br/>{a' + i + '} : {c' + i + '}%';
         }
 
+        console.log(dSeries);
+
+        // Set Legend option to none if only one serie
+        var legend_yn = true;
+        var grid_y = 40;
+
+        if (dSeries.length == 1) {
+          legend_yn = false;
+          grid_y = 0;
+        } else {
+          legend_yn = true;
+          grid_y = 40;
+        }
+
         var barchart = echarts.init(el, theme);
 
         barchart.setOption({
+            grid: { // Set margin
+              x: 95,
+              x2: 40,
+              y: grid_y,
+              y2: 30,
+            },
       			title: {
       			  text: x.message.title_text,
       			  subtext: x.message.title_subtext
@@ -37,6 +57,7 @@ HTMLWidgets.widget({
       			  formatter: cFormatter
       			},
       			legend: {
+      			  show: legend_yn,
       			  x: 100,
       			  data: x.message.legend_titles
       			},
