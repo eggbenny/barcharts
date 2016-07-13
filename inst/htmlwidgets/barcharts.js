@@ -59,13 +59,19 @@ HTMLWidgets.widget({
       			legend: {
       			  show: legend_yn,
       			  x: 100,
-      			  data: x.message.legend_titles
+      			  data: x.message.legend_titles,
+      			  textStyle: {
+                fontFamily: 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif',
+                fontSize: 12,
+                fontStyle: 'normal',
+                fontWeight: 'normal',
+              },
       			},
       			toolbox: {
       			  show: true,
       			  feature: {
       				saveAsImage: {
-      				  show: true,
+      				  show: false,
       				  title: "Save Image"
       				}
       			  }
@@ -76,12 +82,24 @@ HTMLWidgets.widget({
       			  min:0,
       			  max:100,
       			  splitNumber:x.message.split_number,
-      			  boundaryGap: [0, 0.01]
+      			  boundaryGap: [0, 0.01],
+      			  textStyle: {
+                fontFamily: 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif',
+                fontSize: 12,
+                fontStyle: 'normal',
+                fontWeight: 'normal',
+              },
       			}],
       			yAxis: [{
       			  type: 'category',
       			  axisLabel:{
-      			    margin:5
+      			    margin:5,
+      			    textStyle: {
+                  fontFamily: 'Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif',
+                  fontSize: 12,
+                  fontStyle: 'normal',
+                  fontWeight: 'normal',
+                },
       			  },
       			  data: x.message.category
       			}],
